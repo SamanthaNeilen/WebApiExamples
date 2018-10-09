@@ -35,6 +35,6 @@ This Net Core (2.1) test project constains several tests to show which routes ar
 
 ## Microsoft Docs reference links
 
-- [Creating an .Net Framework MVC route constraint](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-cs "Creating an .Net Framework MVC route constraint"){:target="_blank"}.
-- [Creating an .Net Framework WebApi 2.0 route constraint](https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2#route-constraints "Creating an .Net Framework WebApi 2.0 route constraint"){:target="_blank"}.
-- [.Net Core 2.1 route constraint reference](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-2.1#route-constraint-reference ".Net Core 2.1 route constraint reference"){:target="_blank"}.
+- [Creating an .Net Framework MVC route constraint](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-cs "Creating an .Net Framework MVC route constraint")
+- [Creating an .Net Framework WebApi 2.0 route constraint](https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2#route-constraints "Creating an .Net Framework WebApi 2.0 route constraint")
+- [.Net Core 2.1 route constraint reference](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-2.1#route-constraint-reference ".Net Core 2.1 route constraint reference")
