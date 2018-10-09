@@ -1,7 +1,7 @@
 # WebApiExamples
 
 These projects were created with a Visual Studio 2017 Community Edition 
-This solution is a reference implementation for [my blogpost regarding route constraints](https://samanthaneilen.github.io/2018/10/09/using-route-constraints-for-input-validation-and-improved-security.html "blogpost regarding route constraints").
+This solution is a reference implementation for [my blogpost regarding route constraints](https://samanthaneilen.github.io/2018/10/09/using-route-constraints.html "blogpost regarding route constraints").
 
 
 ## Framework.WebApiExample
