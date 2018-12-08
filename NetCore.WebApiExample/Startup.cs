@@ -6,6 +6,9 @@ using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetCore.WebApiExample.MiddleWare;
+using NetCore.WebApiExample.MiddleWare.Swagger;
+using Swashbuckle.AspNetCore.Swagger;
+using System.Reflection;
 
 namespace NetCore.WebApiExample
 {
@@ -33,6 +36,23 @@ namespace NetCore.WebApiExample
                 routeOptions.ConstraintMap.Add("Email", typeof(EmailRouteContraint));
             });
 
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1",
+                    new Info()
+                    {
+                        Title = "NetCore.WebApiExample",
+                        Version = "1.0",
+                        Description = "This API features several endpoints showing different API features"
+                    });
+
+                var xmlCommentsPath = Assembly.GetExecutingAssembly().Location.Replace("dll", "xml");
+                c.IncludeXmlComments(xmlCommentsPath);
+
+                c.OperationFilter<SwaggerOperationFilter>();
+                c.DocumentFilter<SwaggerDocumentFilter>();
+            });
+
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -52,6 +72,15 @@ namespace NetCore.WebApiExample
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
+
+            app.UseSwagger();
+
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint(
+                 $"/swagger/v1/swagger.json",
+                 $"NetCore.WebApiExample 1.0");
+            });
 
             app.UseMvc(routes =>
             {

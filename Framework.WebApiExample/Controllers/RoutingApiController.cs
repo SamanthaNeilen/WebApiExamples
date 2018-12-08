@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using System;
+using System.Web.Http;
+using System.Web.Http.Description;
 
 namespace Framework.WebApiExample.Controllers
 {
@@ -19,11 +21,42 @@ namespace Framework.WebApiExample.Controllers
             return Ok($"Route is RoutingApiController.Get({nameof(valueMatchingRegex)})");
         }
 
+        /// <summary>
+        /// This route has a XML comments description
+        /// </summary>
+        /// <remarks>
+        /// This is a remark!
+        /// </remarks>
+        /// <param name="email">A valid email</param>
+        /// <returns>Single line of text describing the route for the result</returns>
         [HttpGet]
         [Route("{email:Email}")]        
         public IHttpActionResult Get(string email)
         {
             return Ok($"Route is RoutingApiController.Get({nameof(email)})");
+        }
+
+        [HttpGet]
+        [Route("customResponsetype")]
+        [ResponseType(typeof(MyResponseType))]
+        public IHttpActionResult GetCustomResponseType()
+        {
+            return Ok(new MyResponseType
+            {
+                Title = "SomeTitle",
+                Data = "SomeData"
+            });
+        }
+
+        public class MyResponseType
+        {
+            public string Title { get; set; }
+
+            public string Data { get; set; }
+
+            public int Number { get; set; }
+
+            public DateTime Timestamp { get; set; }
         }
     }
 }
