@@ -1,8 +1,11 @@
 # WebApiExamples
 
-These projects were created with a Visual Studio 2017 Community Edition 
-This solution is a reference implementation for [my blogpost regarding route constraints](https://samanthaneilen.github.io/2018/10/09/using-route-constraints.html "my blogpost regarding route constraints").
-This solution is a reference implementation for [my blogpost regarding Swagger/OpenApi/Swashbuckle constraints](https://samanthaneilen.github.io/2018/12/08/Using-and-extending-swagger.json-for-API-documentation.html "my blogpost regarding Swagger/OpenApi/Swashbuckle constraints").
+These projects were created with a Visual Studio 2017 Community Edition
+ 
+This solution is a reference implementation for: 
+- [my blogpost regarding route constraints](https://samanthaneilen.github.io/2018/10/09/using-route-constraints.html "my blogpost regarding route constraints").
+- [my blogpost regarding Swagger/OpenApi/Swashbuckle constraints](https://samanthaneilen.github.io/2018/12/08/Using-and-extending-swagger.json-for-API-documentation.html "my blogpost regarding Swagger/OpenApi/Swashbuckle constraints").
+- [my blogpost regarding API Versioning](https://samanthaneilen.github.io/2019/01/19/Web-API-versioning-using-the-NuGet-packages-from-Microsoft.html "my blogpost regarding API versioning").
 
 
 ## Framework.WebApiExample
@@ -30,6 +33,11 @@ The XML comments file output is configured in the Project Properties in the Buil
 
 The RoutingApiController.cs file contains a method GetCustomResponseType. This method was decorated with the ResponseType to list the output JSON model in the SwaggerUI page for that method.
 
+### WebApi Versioning
+Due to the fact that the startup classes would have to change dramaticly and would break previous implementations shown my blogposts, versioning was not implemented in this project. 
+Please see the [the Microsoft.Asp.Net.WebApi.Versioning github sample project](https://github.com/Microsoft/aspnet-api-versioning/tree/master/samples/webapi/SwaggerWebApiSample "the Microsoft.Asp.Net.WebApi.Versioning github sample project").
+The [wiki for Microsoft.Asp.Net.WebApi.Versioning](https://github.com/Microsoft/aspnet-api-versioning/wiki "wiki for Microsoft.Asp.Net.WebApi.Versioning") will also list .NET Framework code for all subjects. 
+
 
 ## .NETCore.WebApiExample
 
@@ -41,7 +49,7 @@ The HomeController is an controller containing a method accepting an email param
 
 The RoutingApiController is an WebApi controller containing several methods demonstrating the default route constraints provided by the default constraint resolver. There is also a method with an Email route constraint. The route constraint mapping can be found in Startup.cs and the implementation for the route constraint can be found in the MiddleWare /EmailRouteConstraint.cs file.
 
-In ..NET Core MVC and WebApi controllers share the same base class and setup in the Startup.cs file so you no longer have to provide separate implementations and mappings.
+In .NET Core MVC and WebApi controllers share the same base class and setup in the Startup.cs file so you no longer have to provide separate implementations and mappings.
 
 #### Swagger/OpenApi with Swashbuckle
 
@@ -53,6 +61,13 @@ The XML comments file output is configured in the Project Properties in the Buil
 
 The HomeController.cs file contains a method GetCustomResponseType. This method was decorated with the ProducesResponseType to list the output JSON model in the SwaggerUI page for that method.
 
+### WebApi Versioning
+This .NET Core (2.1) web application contains code showing how to configure and customize a Swagger UI.
+
+The StartUp.cs contains all relevant configuration and requires the Microsoft.AspNetCore.Mvc.Versioning and Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer NuGet packages to be installed.
+
+The Controller classes contain an ApiVersion attribute for assigning a version number to the specific controller.
+
 ## Utilities
 
 This .NET Standard (2.0) class library contains a simple IsEmail extension method used by the EmailRouteConstraint implementations in the web projects. 
@@ -63,12 +78,15 @@ This .NET Core (2.1) test project constains several tests to show which routes a
 
 ## Microsoft Docs reference links for routing
 
-- [Creating an ..NET Framework MVC route constraint](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-cs "Creating an ..NET Framework MVC route constraint")
-- [Creating an ..NET Framework WebApi 2.0 route constraint](https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2#route-constraints "Creating an ..NET Framework WebApi 2.0 route constraint")
-- [..NET Core 2.1 route constraint reference](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-2.1#route-constraint-reference "..NET Core 2.1 route constraint reference")
+- [Creating an .NET Framework MVC route constraint](https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/creating-a-route-constraint-cs "Creating an .NET Framework MVC route constraint")
+- [Creating an .NET Framework WebApi 2.0 route constraint](https://docs.microsoft.com/en-us/aspnet/web-api/overview/web-api-routing-and-actions/attribute-routing-in-web-api-2#route-constraints "Creating an .NET Framework WebApi 2.0 route constraint")
+- [.NET Core 2.1 route constraint reference](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/routing?view=aspnetcore-2.1#route-constraint-reference ".NET Core 2.1 route constraint reference")
 
 
 ## Reference links for Swagger/OpenApi implementation
-- [Swashbuckle github project and documentation](https://github.com/domaindrivendev/Swashbuckle "Swashbuckle github project and documentation"){:target="_blank"}
-- [Swashbuckle. AspNetCore github project and documentation](https://github.com/domaindrivendev/Swashbuckle.AspNetCore  "Swashbuckle.AspNetCore github project and documentation"){:target="_blank"}
-- [Microsoft docs Swagger page for .NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger "Microsoft docs Swagger page for .NET Core "){:target="_blank"}
+- [Swashbuckle github project and documentation](https://github.com/domaindrivendev/Swashbuckle "Swashbuckle github project and documentation")
+- [Swashbuckle. AspNetCore github project and documentation](https://github.com/domaindrivendev/Swashbuckle.AspNetCore  "Swashbuckle.AspNetCore github project and documentation")
+- [Microsoft docs Swagger page for .NET Core](https://docs.microsoft.com/en-us/aspnet/core/tutorials/web-api-help-pages-using-swagger "Microsoft docs Swagger page for .NET Core ")
+
+## Reference links for WebAPI versioning
+- [GitHub wiki for Microsoft.Asp.Net.WebApi.Versioning](https://github.com/Microsoft/aspnet-api-versioning/wiki "GitHub wiki for Microsoft.Asp.Net.WebApi.Versioning")
