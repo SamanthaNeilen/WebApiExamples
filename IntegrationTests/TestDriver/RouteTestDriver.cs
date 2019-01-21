@@ -21,21 +21,20 @@ namespace IntegrationTests.TestDriver
 
         public bool UrlReturnsSuccessStatusCode(string relativeUrlForTest)
         {
-            var httpClient = HttpClientFactory.GetInstance();
-            var uriToTest = new Uri(_localHostBaseUrl + (relativeUrlForTest ?? string.Empty));
-            var httpCallResult = httpClient.GetAsync(uriToTest).Result;
+            var httpCallResult = TestUrl(relativeUrlForTest);
             return httpCallResult.IsSuccessStatusCode;
-
         }
 
         public bool UrlReturns404NotFoundStatusCode(string relativeUrlForTest)
         {
-
-            var httpClient = HttpClientFactory.GetInstance();
-            var uriToTest = new Uri(_localHostBaseUrl + (relativeUrlForTest ?? string.Empty));
-            var httpCallResult = httpClient.GetAsync(uriToTest).Result;
+            var httpCallResult = TestUrl(relativeUrlForTest);
             return httpCallResult.StatusCode == HttpStatusCode.NotFound;
+        }
 
+        public bool UrlReturns400BadRequestStatusCode(string relativeUrlForTest)
+        {
+            var httpCallResult = TestUrl(relativeUrlForTest);
+            return httpCallResult.StatusCode == HttpStatusCode.BadRequest;
         }
 
         private string AppendBackSlashIfNeeded(string localHostBaseUrl)
@@ -43,7 +42,15 @@ namespace IntegrationTests.TestDriver
             return !localHostBaseUrl.EndsWith("/")
                 ? localHostBaseUrl + "/"
                 : localHostBaseUrl;
-        }       
+        }
+
+        private HttpResponseMessage TestUrl(string relativeUrlForTest)
+        {
+            var httpClient = HttpClientFactory.GetInstance();
+            var uriToTest = new Uri(_localHostBaseUrl + (relativeUrlForTest ?? string.Empty));
+            var httpCallResult = httpClient.GetAsync(uriToTest).Result;
+            return httpCallResult;
+        }
     }
 
     internal static class HttpClientFactory
