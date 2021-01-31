@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="d377e3d3-42ea-4fd2-91d0-50926f6e7fb2" activeEnvironment="Default" name="NetCore WebApi Examples" resourceRoot="" soapui-version="5.6.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:RestService" id="3f2c35ac-ac76-443d-8eb4-9da2839a9f3b" wadlVersion="http://wadl.dev.java.net/2009/02" name="https://localhost:44314" type="rest" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart=""/><con:endpoints><con:endpoint>${#Project#environment}</con:endpoint></con:endpoints><con:resource name="values" path="/api/values" id="8a49dbfa-60c7-4dba-a013-c65fbca0dc5b"><con:settings/><con:parameters/><con:resource name="{id}" path="{id}" id="ba1fcfae-c12c-41c6-8911-06455dc30199"><con:settings/><con:parameters><con:parameter><con:name>id</con:name><con:value>id</con:value><con:style>TEMPLATE</con:style><con:default>id</con:default></con:parameter></con:parameters><con:method name="Get by {id}" id="fcdf6637-596d-4cb8-a9bc-457c2021282a" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json</con:mediaType><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:request name="Get by Id = 1" id="30feef3a-5b3e-4a52-a885-1843d589f562" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#environment}</con:endpoint><con:request/><con:originalUri>https://localhost/api/values/1</con:originalUri><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="id" value="1" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request><con:request name="Get by Id = 2" id="954c0bba-f161-474e-bf68-aac5e288bd45" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#environment}</con:endpoint><con:request/><con:originalUri>https://localhost/api/values/2</con:originalUri><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="id" value="2" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method><con:method name="Post by {id}" id="72fa3959-d578-49c6-8434-7a7c69bed01b" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:request name="{id: 5, key: mykey, value: myvalue}" id="6736d60c-1dff-48cb-aaf2-c7fe61bc74a3" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#environment}</con:endpoint><con:request>{
+    "key": "myKey",
+    "value": "myvalue"
+}</con:request><con:originalUri>https://localhost/api/values/5</con:originalUri><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters><entry key="id" value="5" xmlns="http://eviware.com/soapui/config"/></con:parameters></con:request></con:method></con:resource><con:method name="Get (no parameters)" id="2decd202-03c3-42ac-9fa3-3b165d0e302e" method="GET"><con:settings/><con:parameters/><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>Response</con:element></con:representation><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:request name="Get" id="a1cef161-fb9a-45c8-89e2-8b444188a3c9" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#environment}</con:endpoint><con:request/><con:originalUri>https://localhost/api/values</con:originalUri><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/><con:parameterOrder/></con:request></con:method><con:method name="Post" id="2502a123-6e6c-4567-9028-d075b85d5b1b" method="POST"><con:settings/><con:parameters/><con:representation type="REQUEST"><con:mediaType>application/json</con:mediaType><con:params/></con:representation><con:representation type="FAULT"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>400</con:status><con:params/><con:element xmlns:val="https://localhost/api/values">val:Fault</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>text/plain; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/><con:element>data</con:element></con:representation><con:representation type="RESPONSE"><con:mediaType>application/json; charset=utf-8</con:mediaType><con:status>200</con:status><con:params/></con:representation><con:request name="Post { key: 4, value: myvalue }" id="3b445de2-edc0-4c86-8320-df5a1943b0cc" mediaType="application/json" postQueryString="false"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment xmlns:con="http://eviware.com/soapui/config">&#13;
+  &lt;con:entry key="Accept" value="application/json"/>&#13;
+  &lt;con:entry key="Content-Type" value="application/json"/>&#13;
+&lt;/xml-fragment></con:setting></con:settings><con:endpoint>${#Project#environment}</con:endpoint><con:request>{
+    "key": 4,
+    "value": "myvalue"
+}</con:request><con:originalUri>https://localhost/api/values</con:originalUri><con:credentials><con:username xsi:nil="true"/><con:password xsi:nil="true"/><con:domain xsi:nil="true"/><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:request></con:method></con:resource></con:interface><con:testSuite id="81577e5f-0d29-4df1-af8d-2e6a5876d71f" name="ValuesTests"><con:settings/><con:runType>SEQUENTIAL</con:runType><con:testCase id="eaa9718c-1bf7-4def-a412-e313b2ef7f02" failOnError="true" failTestCaseOnErrors="true" keepSession="false" maxResults="0" name="Get - should return value1" searchProperties="true"><con:settings/><con:testStep type="restrequest" name="Get Values" id="d5208f9e-29bd-4393-b1b8-3e31ca20dbb3"><con:settings/><con:config service="https://localhost:44314" methodName="Get (no parameters)" resourcePath="/api/values" xsi:type="con:RestRequestStep" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:restRequest name="Get Values" id="e851688f-0e18-4a42-bbbb-9f430b75e4d2" mediaType="application/json"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>${#Project#environment}</con:endpoint><con:request/><con:originalUri>https://localhost/api/values</con:originalUri><con:assertion type="Valid HTTP Status Codes" id="1531ce1f-7d4a-49e7-b853-5d06c986d788" name="Valid HTTP Status Codes"><con:configuration><codes>200</codes></con:configuration></con:assertion><con:assertion type="Simple Contains" id="838b4efa-5f67-47ba-8ea5-801132f2753f" name="Contains - value1"><con:configuration><token>value1</token><ignoreCase>false</ignoreCase><useRegEx>false</useRegEx></con:configuration></con:assertion><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:parameters/></con:restRequest></con:config></con:testStep><con:properties/></con:testCase><con:properties/></con:testSuite><con:restMockService id="b0c30378-35df-4790-9e1e-0d813de29605" port="8081" path="/" host="localhost" name="Values MockService" docroot=""><con:settings/><con:properties/><con:restMockAction name="/api/values" method="GET" resourcePath="/api/values" id="33fafbac-694d-4b77-ac33-55831f836db5"><con:settings/><con:defaultResponse xsi:nil="true" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"/><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="0600c5a9-d8ad-4a46-9ac1-c3420fc8fc48" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[
+   "value1",
+   "value2"
+]</con:responseContent></con:response><con:response name="Response 2" id="667f4a1d-d8f5-4871-884c-bb3033ebcfb2" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>[
+   "value1",
+   "value5"
+]</con:responseContent></con:response></con:restMockAction><con:restMockAction name="/api/values/1" method="GET" resourcePath="/api/values/1" id="6470714d-165c-4fd5-ba59-361325edcd01"><con:settings/><con:defaultResponse>Response 1</con:defaultResponse><con:dispatchStyle>SEQUENCE</con:dispatchStyle><con:dispatchPath>/*&#13;
+// Script dispatcher is used to select a response based on the incoming request.&#13;
+// Here are few examples showing how to match based on path, query param, header and body&#13;
+&#13;
+// Match based on path&#13;
+def requestPath = mockRequest.getPath()&#13;
+log.info "Path: "+ requestPath&#13;
+&#13;
+if( requestPath.contains("json") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "JSON Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on query parameter&#13;
+def queryString = mockRequest.getRequest().getQueryString()&#13;
+log.info "QueryString: " + queryString&#13;
+&#13;
+if( queryString.contains("stockholm") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response Stockholm"&#13;
+}&#13;
+else if( queryString.contains("london") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response London"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on header&#13;
+def acceptEncodingHeaderList = mockRequest.getRequestHeaders().get("Accept-Encoding")&#13;
+log.info "AcceptEncoding Header List: " + acceptEncodingHeaderList&#13;
+&#13;
+if( acceptEncodingHeaderList.contains("gzip,deflate") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "GZiped Response"&#13;
+}&#13;
+&#13;
+&#13;
+// Match based on body&#13;
+def requestBody = mockRequest.getRequestContent()&#13;
+log.info "Request body: " + requestBody&#13;
+&#13;
+if( requestBody.contains("some data") )&#13;
+{&#13;
+    // return the name of the response you want to dispatch&#13;
+    return "Response N"&#13;
+}&#13;
+*/&#13;
+</con:dispatchPath><con:response name="Response 1" id="ac6b4c17-3bbd-4acf-a155-6fc91c9ff421" httpResponseStatus="200" mediaType="application/json"><con:settings/><con:responseContent>"Requested id: 1"</con:responseContent></con:response></con:restMockAction></con:restMockService><con:endpointStrategy xsi:type="con:DefaultEndpointStrategy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:endpoint mode="OVERRIDE">{#Project#environment}</con:endpoint><con:endpoint mode="OVERRIDE">${#Project#environment}</con:endpoint></con:endpointStrategy><con:properties><con:property><con:name>environment_local</con:name><con:value>https://localhost:44314</con:value></con:property><con:property><con:name>environment_test</con:name><con:value>https://my-dummy-test/</con:value></con:property><con:property><con:name>environment_accept</con:name><con:value>https://my-dummy-accept/</con:value></con:property><con:property><con:name>environment</con:name><con:value>${#Project#environment_local}</con:value></con:property></con:properties><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
